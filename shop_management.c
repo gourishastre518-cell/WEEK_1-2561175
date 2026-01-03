@@ -14,7 +14,6 @@ int main() {
     int i, searchId, found = 0;
     float grandTotal = 0;
 
-    /* STEP 1: Take input for 5 products */
     for (i = 0; i < 5; i++) {
         printf("\nEnter details of Product %d\n", i + 1);
 
@@ -33,7 +32,7 @@ int main() {
         p[i].total = p[i].qty * p[i].price;
     }
 
-    /* STEP 2: Save details into file */
+    
     fp = fopen("products.txt", "w");
     for (i = 0; i < 5; i++) {
         fprintf(fp, "%d %s %d %.2f %.2f\n",
@@ -41,7 +40,7 @@ int main() {
     }
     fclose(fp);
 
-    /* STEP 3: Read and display product details */
+    
     fp = fopen("products.txt", "r");
 
     printf("\n-----------------------------------------------\n");
@@ -61,7 +60,7 @@ int main() {
     printf("Total Bill Amount: %.2f\n", grandTotal);
     fclose(fp);
 
-    /* STEP 4: Search product by ID */
+    
     printf("\nEnter Product ID to search: ");
     scanf("%d", &searchId);
 
